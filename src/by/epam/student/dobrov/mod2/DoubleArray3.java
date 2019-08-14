@@ -24,7 +24,11 @@ public class DoubleArray3 {
 
         System.out.println();
 
-        findLnAndCl(arr, ln, cl, num1, num2);
+        findLn(arr, ln, cl, num1);
+
+        System.out.println();
+
+        findCl(arr, ln, cl, num2);
     }
 
     public static void outPutDArr(int arr[][]) {
@@ -47,7 +51,7 @@ public class DoubleArray3 {
         return arr;
     }
 
-    public static int[][] findLnAndCl(int arr[][], int ln, int cl, int num1, int num2) {
+    public static int[][] findLn(int arr[][], int ln, int cl, int num1) {
 
         for (int i = 0; i < ln; i++) {
 
@@ -55,12 +59,30 @@ public class DoubleArray3 {
 
 
                 if (num1 == i) {
-                    System.out.println(arr[i][j] + " ");
+                    System.out.print(arr[i][j] + " ");
                 }
 
 
+//                if(num2 == j){
+//                    System.out.print(arr[i][j] + " ");
+//                }
+
+            }
+
+        }
+
+        return arr;
+    }
+    public static int[][] findCl(int arr[][], int ln, int cl,  int num2) {
+
+        for (int i = 0; i < ln; i++) {
+
+            for (int j = 0; j < cl; j++) {
+
+
+
                 if(num2 == j){
-                    System.out.print(arr[i][j] + " ");
+                    System.out.println(arr[i][j] + " ");
                 }
 
             }
