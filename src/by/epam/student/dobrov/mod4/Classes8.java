@@ -23,7 +23,7 @@ public class Classes8 {
 
         DataCustomers dataCustomers = new DataCustomers(customers);
         dataCustomers.sortBySurname();
-        dataCustomers.showCustomerBySurname();
+        dataCustomers.showCustomer();
 
         System.out.println();
 
@@ -131,8 +131,8 @@ class Customer {
 }
 
 class DataCustomers {
-    private static Customer[] customers;
-//    private Customer[] customers;
+
+    private Customer[] customers;
 
 
     public DataCustomers(Customer... customers) {
@@ -152,7 +152,7 @@ class DataCustomers {
     }
 
     //список покупателей в алфавитном порядке;
-    public  static Customer[] sortBySurname() {
+    public void sortBySurname() {
 
         Customer temp;
 
@@ -164,14 +164,11 @@ class DataCustomers {
                     customers[j + 1] = temp;
                 }
             }
-
         }
-        return customers;
-
     }
 
     //список покупателей, у которых номер кредитной карточки находится в заданном интервале
-    public Customer[] dataCustomersByCreditCard(int a, int b) {
+    public void dataCustomersByCreditCard(int a, int b) {
 
         for (int i = 0; i < this.customers.length; i++) {
             if (customers[i].getNumberOfCreditCard() >= a && customers[i].getNumberOfCreditCard() <= b) {
@@ -179,21 +176,19 @@ class DataCustomers {
             }
         }
 
-        return customers;
     }
 
-
     //вывод на консоль
-    public  static void showCustomerBySurname() {
+    public void showCustomer() {
 
-        for (int i = 0; i < customers.length; i++) {
+        for (int i = 0; i < this.customers.length; i++) {
             System.out.println(customers[i]);
         }
+
 
     }
 
 
 }
-
 
 
